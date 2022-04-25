@@ -39,7 +39,6 @@ fi
 # Create path
 cd "$DOTFILES_DIR"
 
-# Run playbook
 if [[ -f "$DOTFILES_DIR/main.yaml" ]]; then
   ansible-playbook main.yaml --ask-become-pass
 fi
