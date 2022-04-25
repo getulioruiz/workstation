@@ -16,4 +16,5 @@ default_roles:
   # - terraform
   # - discord
   # - azure-cli
-  - commitizen
+  # - commitizen
+  - mongosh
