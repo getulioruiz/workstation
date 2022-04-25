@@ -1,4 +1,9 @@
 ---
+- name: Existing install
+  stat:
+    path: "/usr/bin/go"
+  register: go
+
 - name: Install language
   ansible.builtin.package:
     name:
@@ -6,9 +11,10 @@
       - gotestsum
     state: latest
   become: true
+  when: not go.stat.exists
 
-- name: Config folder
-  ansible.builtin.file:
-    mode: "0755"
-    path: "{{ ansible_user_dir }}/Development/language/go"
-    state: directory
+# - name: Config folder
+#   ansible.builtin.file:
+#     mode: "0755"
+#     path: "{{ ansible_user_dir }}/Development/language/go"
+#     state: directory

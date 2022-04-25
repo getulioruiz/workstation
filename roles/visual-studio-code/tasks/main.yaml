@@ -1,8 +1,15 @@
+---
+- name: Existing install
+  stat:
+    path: "/usr/bin/code"
+  register: code
+
 - name: Install Microsoft Key
   become: true
   apt_key:
     url: 'https://packages.microsoft.com/keys/microsoft.asc'
     state: present
+  when: not code.stat.exists
 
 - name: Install VSCode Repository
   become: true
@@ -10,6 +17,7 @@
     repo: 'deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main'
     state: present
     filename: vscode
+  when: not code.stat.exists
 
 - name: Install
   ansible.builtin.package:
@@ -17,6 +25,7 @@
       - code
     state: latest
   become: true
+  when: not code.stat.exists
 
 - name: Install Virtual Studio Code Extensions
   shell:

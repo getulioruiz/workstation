@@ -1,6 +1,12 @@
 ---
+- name: Existing install
+  stat:
+    path: "/snap/bin/spotify"
+  register: spotify
+
 - name: Install
   community.general.snap:
     name: spotify
   become: true
+  when: not spotify.stat.exists
 

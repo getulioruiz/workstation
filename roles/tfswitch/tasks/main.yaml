@@ -1,6 +1,12 @@
 ---
+- name: Existing install
+  stat:
+    path: "/usr/local/bin/tfswitch"
+  register: tfswitch
+
 - name: Installing TFSwitch
   shell:
     cmd: 'curl -L https://raw.githubusercontent.com/warrensbox/terraform-switcher/release/install.sh | bash'
     warn: false
   become: true
+  when: not tfswitch.stat.exists

@@ -1,13 +1,15 @@
 ---
 - name: Existing install
   stat:
-    path: "/usr/bin/firefox"
-  register: firefox
+    path: "/usr/bin/batcat"
+  register: batcat
 
 - name: Install
   ansible.builtin.package:
     name:
-      - firefox
+      - batcat
     state: latest
   become: true
-  when: not firefox.stat.exists
+  when: not batcat.stat.exists
+
+

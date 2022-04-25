@@ -1,7 +1,13 @@
 ---
+- name: Existing install
+  stat:
+    path: "/usr/bin/postman"
+  register: postman
+
 - name: Install
   community.general.snap:
     name: postman
     classic: true
   become: true
+  when: not postman.stat.exists
 

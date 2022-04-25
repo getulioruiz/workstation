@@ -1,6 +1,6 @@
 default_roles:
   - system
-  - bat
+  - batcat
   - pyenv
   - zsh
   - firefox

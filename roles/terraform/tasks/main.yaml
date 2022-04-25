@@ -1,21 +1,29 @@
 ---
+- name: Existing install
+  stat:
+    path: "{{ ansible_user_dir }}/bin/terraform"
+  register: terraform
+
 - name: Install HashiCorp Key
   become: true
   apt_key:
     url: 'https://apt.releases.hashicorp.com/gpg'
     state: present
+  when: not terraform.stat.exists
 
 
-- name: Install VSCode Repository
+- name: Install HashiCorp Repository
   apt_repository:
     repo: 'deb [arch=amd64] https://apt.releases.hashicorp.com impish main'
     state: present
+  when: not terraform.stat.exists
 
 - name: "Update Repository cache"
   apt:
     update_cache: true
     cache_valid_time: 3600
     force_apt_get: true
+  when: not terraform.stat.exists
 
 - name: Install
   ansible.builtin.package:
@@ -23,7 +31,9 @@
       - terraform
     state: latest
   become: true
+  when: not terraform.stat.exists
 
 - name: Creating Symbolic Link
   shell:
     cmd: sudo ln -snf /home/getulio/bin/terraform /usr/bin/terraform
+  when: not terraform.stat.exists

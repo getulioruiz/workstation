@@ -1,5 +1,17 @@
 ---
+- name: Existing install
+  stat:
+    path: "{{ ansible_user_dir }}/.pyenv"
+  register: pyenv
+
 - name: Install
   shell:
     cmd: curl -s -S -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
     warn: false
+  when: not pyenv.stat.exists
+
+
+
+
+
+
