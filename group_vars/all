@@ -14,4 +14,6 @@ default_roles:
   # - spotify
   # - tfswitch
   # - terraform
-  - discord
+  # - discord
+  # - azure-cli
+  - commitizen
