@@ -1,15 +1,15 @@
 ---
-# - name: Existing install
-#   stat:
-#     path: "{{ ansible_user_dir }}/bin/terraform"
-#   register: terraform
+- name: Existing install
+  stat:
+    path: "/usr/bin/mongosh"
+  register: mongosh
 
 - name: Install MongoDB public GPG Key
   become: true
   apt_key:
     url: 'https://www.mongodb.org/static/pgp/server-5.0.asc'
     state: present
-  # when: not terraform.stat.exists
+  when: not mongosh.stat.exists
 
 
 - name: Install MongoDB Repository
@@ -17,14 +17,14 @@
   apt_repository:
     repo: 'deb [arch=amd64,arm64] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse'
     state: present
-  # when: not terraform.stat.exists
+  when: not mongosh.stat.exists
 
 - name: "Update Repository cache"
   apt:
     update_cache: true
     cache_valid_time: 3600
     force_apt_get: true
-  # when: not terraform.stat.exists
+  when: not mongosh.stat.exists
 
 - name: Install
   ansible.builtin.package:
@@ -32,4 +32,4 @@
       - mongodb-mongosh
     state: latest
   become: true
-  # when: not terraform.stat.exists
+  when: not mongosh.stat.exists

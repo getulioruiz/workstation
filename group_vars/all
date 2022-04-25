@@ -17,4 +17,5 @@ default_roles:
   # - discord
   # - azure-cli
   # - commitizen
-  - mongosh
+  # - mongosh
+  - gcloud

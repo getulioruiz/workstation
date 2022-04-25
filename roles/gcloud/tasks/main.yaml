@@ -1,0 +1,33 @@
+---
+- name: Existing install
+  stat:
+    path: "/usr/bin/gcloud"
+  register: gcloud
+
+- name: Install Google Cloud SDK Key
+  become: true
+  apt_key:
+    url: 'https://packages.cloud.google.com/apt/doc/apt-key.gpg'
+    state: present
+  when: not gcloud.stat.exists
+
+- name: Install Google Cloud SDK Repository
+  become: true
+  apt_repository:
+    repo: 'deb [arch=amd64] https://packages.cloud.google.com/apt cloud-sdk main'
+    state: present
+    filename: google-cloud-sdk
+  when: not gcloud.stat.exists
+
+- name: Install Google Cloud SDK
+  become: true
+  apt:
+    name: google-cloud-sdk
+  when: not gcloud.stat.exists
+  
+
+
+
+
+
+
