@@ -5,25 +5,25 @@
       - docker
       - docker-compose
     state: latest
-  become: yes
+  become: true
 
 - name: Enable service
   ansible.builtin.systemd:
-    enabled: yes
+    enabled: true
     name: docker
     state: started
-  become: yes
+  become: true
 
 - name: Add to group
   ansible.builtin.user:
-    append: yes
+    append: true
     groups: docker
     name: "{{ ansible_env['USER'] }}"
-  become: yes
+  become: true
 
 - name: Copy daemon.json
   ansible.builtin.template:
     dest: "/etc/docker/daemon.json"
     src: "daemon.json"
-  become: yes
+  become: true
   notify: restart_docker

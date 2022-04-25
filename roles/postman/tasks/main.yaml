@@ -2,6 +2,6 @@
 - name: Install
   community.general.snap:
     name: postman
-    classic: yes
+    classic: true
   become: true
 

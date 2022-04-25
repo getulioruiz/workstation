@@ -27,35 +27,35 @@
 
 - name: Clone zsh-autosuggestions
   ansible.builtin.git:
-    clone: yes
+    clone: true
     depth: 1
     dest: "{{ ansible_user_dir }}/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
     repo: https://github.com/zsh-users/zsh-autosuggestions
-    update: yes
+    update: true
     version: master
 
 - name: Clone zsh-completions
   ansible.builtin.git:
-    clone: yes
+    clone: true
     depth: 1
     dest: "{{ ansible_user_dir }}/.oh-my-zsh/custom/plugins/zsh-completions"
     repo: https://github.com/zsh-users/zsh-completions
-    update: yes
+    update: true
     version: master
 
 - name: Clone zsh-syntax-highlighting
   ansible.builtin.git:
-    clone: yes
+    clone: true
     depth: 1
     dest: "{{ ansible_user_dir }}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
     repo: https://github.com/zsh-users/zsh-syntax-highlighting
-    update: yes
+    update: true
     version: master
 
 - name: Clone zsh-z
   ansible.builtin.git:
-    clone: yes
+    clone: true
     depth: 1
     dest: "{{ ansible_user_dir }}/.oh-my-zsh/custom/plugins/zsh-z"
     repo: https://github.com/agkozak/zsh-z
-    update: yes
+    update: true

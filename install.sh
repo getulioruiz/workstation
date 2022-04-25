@@ -3,7 +3,7 @@ set -e
 
 # Paths
 CONFIG_DIR="$HOME/.config/dotfiles"
-DOTFILES_DIR="$HOME/projects/workstation"
+DOTFILES_DIR="$HOME/workstation"
 SSH_DIR="$HOME/.ssh"
 
 echo "configuring /etc/sudoers.d/${USER} sudoer file"
@@ -15,7 +15,7 @@ echo "The sudoer configuration is finished"
 
 # Install Ansible
 if ! [ -x "$(command -v ansible)" ]; then
-  sudo apt-get install ansible git --yes -q
+  sudo apt-get install ansible git --true -q
 fi
 
 # Generate SSH keys
