@@ -1,0 +1,6 @@
+---
+- name: Installing TFSwitch
+  shell:
+    cmd: 'curl -L https://raw.githubusercontent.com/warrensbox/terraform-switcher/release/install.sh | bash'
+    warn: false
+  become: true

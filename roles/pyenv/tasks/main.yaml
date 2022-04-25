@@ -1,0 +1,5 @@
+---
+- name: Install
+  shell:
+    cmd: curl -s -S -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
+    warn: false

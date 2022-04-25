@@ -1,0 +1,17 @@
+---
+- name: Check if slack is installed
+  command: dpkg-query -W slack-desktop
+  register: check_slack
+  failed_when: false
+  changed_when: false
+
+- name: Download Ubuntu slack package
+  command: "wget -O /tmp/slack-desktop-4.25.0-amd64.deb https://downloads.slack-edge.com/releases/linux/4.25.0/prod/x64/slack-desktop-4.25.0-amd64.deb"
+  args:
+    creates: "/tmp/slack-desktop-4.25.0-amd64.deb"
+  when: check_slack.rc == 1
+
+- name: Install Ubuntu slack package
+  command: gdebi --non-interactive /tmp/slack-desktop-4.25.0-amd64.deb
+  become: true
+  when: check_slack.rc == 1

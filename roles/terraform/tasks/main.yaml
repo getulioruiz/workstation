@@ -1,0 +1,29 @@
+---
+- name: Install HashiCorp Key
+  become: true
+  apt_key:
+    url: 'https://apt.releases.hashicorp.com/gpg'
+    state: present
+
+
+- name: Install VSCode Repository
+  apt_repository:
+    repo: 'deb [arch=amd64] https://apt.releases.hashicorp.com impish main'
+    state: present
+
+- name: "Update Repository cache"
+  apt:
+    update_cache: true
+    cache_valid_time: 3600
+    force_apt_get: true
+
+- name: Install
+  ansible.builtin.package:
+    name:
+      - terraform
+    state: latest
+  become: true
+
+- name: Creating Symbolic Link
+  shell:
+    cmd: sudo ln -snf /home/getulio/bin/terraform /usr/bin/terraform

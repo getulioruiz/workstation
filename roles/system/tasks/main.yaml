@@ -1,0 +1,27 @@
+- name: Install
+  ansible.builtin.package:
+    name:
+      - gdebi
+      - jq
+      - gcc
+      - perl
+      - curl
+      - software-properties-common
+      - wget
+      - ncdu
+      - tree
+      - apt-transport-https
+      - ca-certificates
+      - gnupg
+      - python3-pip
+      - make
+      - git
+      - bash-completion
+      - gnupg-agent
+      - flameshot
+      - fonts-hack
+      - mtr
+    state: latest
+  become: true
+
+

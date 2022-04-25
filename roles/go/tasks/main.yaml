@@ -1,0 +1,14 @@
+---
+- name: Install language
+  ansible.builtin.package:
+    name:
+      - golang-go
+      - gotestsum
+    state: latest
+  become: true
+
+- name: Config folder
+  ansible.builtin.file:
+    mode: "0755"
+    path: "{{ ansible_user_dir }}/Development/language/go"
+    state: directory
