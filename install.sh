@@ -3,8 +3,15 @@ set -e
 
 # Paths
 CONFIG_DIR="$HOME/.config/dotfiles"
-DOTFILES_DIR="$HOME/.dotfiles"
+DOTFILES_DIR="$HOME/projects/workstation"
 SSH_DIR="$HOME/.ssh"
+
+echo "configuring /etc/sudoers.d/${USER} sudoer file"
+if [[ ! -e /etc/sudoers.d/${USER} ]]; then
+  echo "${USER} ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/${USER}
+  echo "sudoer is already configured."
+fi
+echo "The sudoer configuration is finished"
 
 # Install Ansible
 if ! [ -x "$(command -v ansible)" ]; then
@@ -23,16 +30,16 @@ fi
 # fi
 
 # Clone repository
-if ! [[ -d "$DOTFILES_DIR" ]]; then
-  git clone "https://github.com/ruizgt/workstation.git" "$DOTFILES_DIR"
-else
-  git -C "$DOTFILES_DIR" pull
-fi
+# if ! [[ -d "$DOTFILES_DIR" ]]; then
+#   git clone "https://github.com/ruizgt/workstation.git" "$DOTFILES_DIR"
+# else
+#   git -C "$DOTFILES_DIR" pull
+# fi
 
 # Create path
 cd "$DOTFILES_DIR"
 
 # Run playbook
 if [[ -f "$DOTFILES_DIR/main.yaml" ]]; then
-  ansible-playbook --diff --extra-vars "$DOTFILES_DIR/main.yaml" "$@"
+  ansible-playbook main.yaml --ask-become-pass
 fi
