@@ -40,6 +40,13 @@ fi
 cd "$DOTFILES_DIR"
 
 if [[ -f "$DOTFILES_DIR/main.yaml" ]]; then
-  ansible-galaxy collection install community.general
+
+  DIR="$HOME/.ansible/collections/ansible_collections/community/general/"
+  echo "$DIR"
+  if [ ! -d "$DIR" ]; then
+    echo "Installing config files in ${DIR}..."
+    ansible-galaxy collection install community.general
+  fi
+  
   ansible-playbook main.yaml --ask-become-pass
 fi
