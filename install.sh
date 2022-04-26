@@ -15,7 +15,7 @@ echo "The sudoer configuration is finished"
 
 # Install Ansible
 if ! [ -x "$(command -v ansible)" ]; then
-  sudo apt-get install ansible git --true -q
+  sudo apt-get install --yes -q ansible git 
 fi
 
 # Generate SSH keys
@@ -40,5 +40,6 @@ fi
 cd "$DOTFILES_DIR"
 
 if [[ -f "$DOTFILES_DIR/main.yaml" ]]; then
+  ansible-galaxy collection install community.general
   ansible-playbook main.yaml --ask-become-pass
 fi

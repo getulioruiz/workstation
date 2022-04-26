@@ -7,7 +7,7 @@
 - name: Install
   ansible.builtin.package:
     name:
-      - batcat
+      - bat
     state: latest
   become: true
   when: not batcat.stat.exists
