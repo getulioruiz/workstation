@@ -2,14 +2,14 @@
 - name: Existing install
   stat:
     path: "/usr/bin/google-chrome"
-  register: chrome
+  register: install
 
 - name: Install Google Key
   become: true
   apt_key: 
     url: 'https://dl.google.com/linux/linux_signing_key.pub'
     state: present
-  when: not chrome.stat.exists
+  when: not install.stat.exists
 
 - name: Install Google Repository
   become: true
@@ -17,10 +17,10 @@
     repo: 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main'
     state: present
     filename: google-chrome
-  when: not chrome.stat.exists
+  when: not install.stat.exists
 
 - name: Install Google Chrome
   become: true
   apt:
     name: google-chrome-stable
-  when: not chrome.stat.exists
+  when: not install.stat.exists

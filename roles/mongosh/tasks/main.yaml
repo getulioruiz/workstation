@@ -6,6 +6,7 @@
 
 - name: Install MongoDB public GPG Key
   become: true
+  # TODO, deixar versao parametrizavel
   apt_key:
     url: 'https://www.mongodb.org/static/pgp/server-5.0.asc'
     state: present

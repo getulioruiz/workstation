@@ -1,16 +1,11 @@
 ---
 - name: Existing install
   stat:
-    path: "/usr/bin/slack"
-  register: slack
+    path: "/snap/bin/slack"
+  register: install
 
-- name: Download Ubuntu slack package
-  command: "wget -O /tmp/slack-desktop-4.25.0-amd64.deb https://downloads.slack-edge.com/releases/linux/4.25.0/prod/x64/slack-desktop-4.25.0-amd64.deb"
-  args:
-    creates: "/tmp/slack-desktop-4.25.0-amd64.deb"
-  when: not slack.stat.exists
-
-- name: Install Ubuntu slack package
-  command: gdebi --non-interactive /tmp/slack-desktop-4.25.0-amd64.deb
+- name: Install
+  community.general.snap:
+    name: slack
   become: true
-  when: not slack.stat.exists
+  when: not install.stat.exists

@@ -2,7 +2,7 @@
 - name: Existing install
   stat:
     path: "/usr/bin/go"
-  register: go
+  register: install
 
 - name: Install language
   ansible.builtin.package:
@@ -11,7 +11,7 @@
       - gotestsum
     state: latest
   become: true
-  when: not go.stat.exists
+  when: not install.stat.exists
 
 # - name: Config folder
 #   ansible.builtin.file:

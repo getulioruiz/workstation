@@ -2,7 +2,7 @@
 - name: Existing install
   stat:
     path: "/usr/bin/docker"
-  register: docker
+  register: install
 
 - name: Install
   ansible.builtin.package:
@@ -11,7 +11,7 @@
       - docker-compose
     state: latest
   become: true
-  when: not docker.stat.exists
+  when: not install.stat.exists
 
 - name: Enable service
   ansible.builtin.systemd:
