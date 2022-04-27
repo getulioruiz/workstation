@@ -2,9 +2,9 @@
 - name: Existing install
   stat:
     path: "/usr/local/bin/cz"
-  register: cz
+  register: install
 
 - name: Install
   shell: >
     sudo pip3 install -U Commitizen
-  when: not cz.stat.exists
+  when: not install.stat.exists

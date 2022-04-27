@@ -19,7 +19,6 @@
       - bash-completion
       - gnupg-agent
       - flameshot
-      - fonts-hack
       - mtr
     state: latest
   become: true

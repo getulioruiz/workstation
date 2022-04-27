@@ -1,11 +1,11 @@
 ---
 - name: Existing install
   stat:
-    path: "/snap/bin/discord"
+    path: "/snap/bin/redis-desktop-manager"
   register: install
 
 - name: Install
   community.general.snap:
-    name: discord
+    name: redis-desktop-manager
   become: true
   when: not install.stat.exists

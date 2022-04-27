@@ -1,11 +1,11 @@
 ---
 - name: Existing install
   stat:
-    path: "/snap/bin/discord"
+    path: "/snap/bin/dbeaver"
   register: install
 
 - name: Install
   community.general.snap:
-    name: discord
+    name: dbeaver-cs
   become: true
   when: not install.stat.exists

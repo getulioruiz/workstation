@@ -21,3 +21,7 @@ default_roles:
   - gcloud
   - kubectl
   - google-chrome
+  - redis-desktop-manager
+  - storage-explorer
+  - pycharm-community
+  - intellij-idea-community
