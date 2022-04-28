@@ -25,3 +25,4 @@ default_roles:
   - storage-explorer
   - pycharm-community
   - intellij-idea-community
+  - poetry

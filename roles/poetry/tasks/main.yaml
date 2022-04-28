@@ -1,0 +1,17 @@
+---
+- name: Existing install
+  stat:
+    path: "{{ ansible_user_dir }}/.poetry"
+  register: install
+
+- name: Install
+  shell:
+    cmd: curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3 -
+    warn: false
+  when: not install.stat.exists
+
+
+
+
+
+

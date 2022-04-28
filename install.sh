@@ -3,7 +3,7 @@ set -e
 
 # Paths
 CONFIG_DIR="$HOME/.config/dotfiles"
-DOTFILES_DIR="$HOME/Projects/Private/workstation"
+DOTFILES_DIR="$HOME/workstation"
 SSH_DIR="$HOME/.ssh"
 
 echo "configuring /etc/sudoers.d/${USER} sudoer file"
