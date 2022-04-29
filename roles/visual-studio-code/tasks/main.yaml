@@ -38,3 +38,5 @@
     - vscode-icons-team.vscode-icons
     - foxundermoon.shell-format
     - octref.vetur
+    - bungcip.better-toml
+    - alexcvzz.vscode-sqlite
