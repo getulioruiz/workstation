@@ -30,10 +30,9 @@ Provide fully automated `Ubuntu 21+` development environment that is easy to set
 
 ### Why Ubuntu?
 
+[Ubuntu](https://ubuntu.com/about) is an ancient African word meaning ‘humanity to others’. It is often described as reminding us that ‘I am what I am because of who we all are’. We bring the spirit of Ubuntu to the world of computers and software. The Ubuntu distribution represents the best of what the world’s software community has shared with the world.
 
 ### Why Ansible?
-
-Ansible replicates what we would do to setup a development environment pretty well. There are many automation solutions out there - we happen to enjoy using Ansible.
 
 
 ## Requirements
@@ -65,7 +64,7 @@ sudo apt-get update && sudo apt-get upgrade
 The `values.yaml` file allows you to personalize your setup to your needs. Create a file located at `~/.config/dotfiles/values.yaml` and include your desired settings.
 
 ```bash
-cd $HOME && mkdir -p Projects/Private && vim .config/dotfiles/values.yaml
+cd $HOME && mkdir -p projects && vim .config/dotfiles/values.yaml
 ```
 
 Below is a list of all available values. Not all are required but incorrect values will break the playbook if not properly set.
