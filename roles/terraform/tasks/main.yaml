@@ -33,7 +33,7 @@
   become: true
   when: not install.stat.exists
 
-- name: Creating Symbolic Link
-  shell:
-    cmd: sudo ln -snf {{ ansible_env.HOME }}/bin/terraform /usr/bin/terraform
-  when: not install.stat.exists
+# - name: Creating Symbolic Link
+#   shell:
+#     cmd: sudo ln -snf {{ ansible_env.HOME }}/bin/terraform /usr/bin/terraform
+#   when: not install.stat.exists
