@@ -14,7 +14,7 @@
 
 - name: Install HashiCorp Repository
   apt_repository:
-    repo: 'deb [arch=amd64] https://apt.releases.hashicorp.com impish main'
+    repo: 'deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main'
     state: present
   when: not install.stat.exists
 
