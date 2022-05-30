@@ -95,7 +95,7 @@ This shell script is also used to initialize your environment after installing `
 > NOTE: You must follow required steps before running this command or things may become unusable until fixed.
 
 ```bash
-$ bash -c "$(curl -fsSL https://raw.githubusercontent.com/getulioruiz/workstation/main/bin/dotfiles)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/getulioruiz/workstation/main/bin/dotfiles)"
 ```
 
 ### Update
@@ -105,6 +105,6 @@ This repository is continuously updated with new features and settings which bec
 To update your environment run the `dotfiles` command in your shell:
 
 ```bash
-$ dotfiles
+dotfiles
 ```
 
