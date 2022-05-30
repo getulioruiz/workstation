@@ -63,7 +63,7 @@ sudo apt-get update && sudo apt-get upgrade && sudo apt-get install vim -y
 The `values.yaml` file allows you to personalize your setup to your needs. Create a file located at `~/.config/dotfiles/values.yaml` and include your settings.
 
 ```bash
-cd $HOME && mkdir -p projects && vim .config/dotfiles/values.yaml
+cd $HOME && mkdir -p .config/dotfiles && vim .config/dotfiles/values.yaml
 ```
 
 Below is a list of all available values. Not all are required but incorrect values will break the playbook if not properly set.
