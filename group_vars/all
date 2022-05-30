@@ -27,5 +27,6 @@ default_roles:
   - intellij-idea-community
   - poetry
   - kitty
+  - git
   - nnn
   - nitrogen
