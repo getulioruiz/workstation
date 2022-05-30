@@ -50,7 +50,7 @@ This Ansible playbook supports `Ubuntu` distribution. This is by design to provi
 Verify your `Ubuntu` installation has all latest packages installed before running the playbook.
 
 ```
-sudo apt-get update && sudo apt-get upgrade
+sudo apt-get update && sudo apt-get upgrade && sudo apt-get install vim -y
 ```
 
 > NOTE: This will take some time.
