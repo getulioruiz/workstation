@@ -9,7 +9,7 @@ SSH_DIR="$HOME/.ssh"
 # Install Ansible
 if ! [ -x "$(command -v ansible)" ]; then
   sudo apt-add-repository --yes --update ppa:ansible/ansible
-  sudo apt install ansible 
+  sudo apt install ansible -y
 fi
 
 # Generate SSH keys
