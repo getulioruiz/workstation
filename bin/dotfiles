@@ -8,17 +8,15 @@ SSH_DIR="$HOME/.ssh"
 
 # Install Ansible
 if ! [ -x "$(command -v ansible)" ]; then
-  sudo apt-get install --yes -q ansible git 
+  sudo apt-add-repository --yes --update ppa:ansible/ansible
+  sudo apt install ansible 
 fi
 
 # Generate SSH keys
 if ! [[ -f "$SSH_DIR/authorized_keys" ]]; then
   mkdir -p "$SSH_DIR"
-
   chmod 700 "$SSH_DIR"
-
   ssh-keygen -b 4096 -t rsa -f "$SSH_DIR/id_rsa" -N "" -C "$USER@$HOSTNAME"
-
   cat "$SSH_DIR/id_rsa.pub" >> "$SSH_DIR/authorized_keys"
 fi
 
