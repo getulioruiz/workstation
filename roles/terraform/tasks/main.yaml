@@ -1,7 +1,7 @@
 ---
 - name: Existing install
   stat:
-    path: "{{ ansible_user_dir }}/bin/terraform"
+    path: "/usr/local/bin/terraform"
   register: install
 
 - name: Install HashiCorp Key
@@ -11,12 +11,20 @@
     state: present
   when: not install.stat.exists
 
-
 - name: Install HashiCorp Repository
   apt_repository:
     repo: "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
     state: present
   when: not install.stat.exists
+
+
+- name: Install mongodb compass
+  shell: |
+    sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+    sudo apt-get update && sudo apt-get install terraform
+  when: compass_check.rc == 1
+
+
 
 - name: "Update Repository cache"
   apt:
