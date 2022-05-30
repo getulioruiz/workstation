@@ -8,7 +8,7 @@ SSH_DIR="$HOME/.ssh"
 
 # Install Ansible
 if ! [ -x "$(command -v ansible)" ]; then
-  sudo apt-add-repository ppa:ansible/ansible -y
+  sudo add-apt-repository --yes ppa:ansible/ansible
   sudo apt install ansible -y
 fi
 
