@@ -1,7 +1,6 @@
 # workstation
 
-Fully automated development environment for `me`.
-
+Fully automated development environment using ansible plays for bootstrapping `my` workspace on `Ubuntu 21+`.
 
 # Table of Contents
 
@@ -77,9 +76,7 @@ Below is a list of all available values. Not all are required but incorrect valu
 
 ### Examples
 
-#### Minimal
-
-Below is a minimal example of `values.yaml` file:
+Below is an example of `values.yaml` file:
 
 ```yaml
 ---
