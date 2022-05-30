@@ -21,6 +21,7 @@
       - flameshot
       - mtr
       - sqlite3
+      - nitrogen
     state: latest
   become: true
 
