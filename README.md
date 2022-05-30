@@ -84,3 +84,27 @@ git_user_email: contact@getul.io
 git_user_name: Getulio Ruiz
 ```
 
+## Usage
+
+### Install
+
+This playbook includes a custom shell script located at `bin/dotfiles`. This script is added to your $PATH after installation and can be run multiple times while making sure any Ansible dependencies are installed and updated.
+
+This shell script is also used to initialize your environment after installing `Manjaro with i3`, performing a full system upgrade and creating your `~/.config/dotfiles/values.yaml` configuration file as mentioned above.
+
+> NOTE: You must follow required steps before running this command or things may become unusable until fixed.
+
+```bash
+$ bash -c "$(curl -fsSL https://raw.githubusercontent.com/getulioruiz/workstation/main/bin/dotfiles)"
+```
+
+### Update
+
+This repository is continuously updated with new features and settings which become available to you when updating.
+
+To update your environment run the `dotfiles` command in your shell:
+
+```bash
+$ dotfiles
+```
+
