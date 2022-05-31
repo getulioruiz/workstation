@@ -46,5 +46,5 @@ if [[ -f "$DOTFILES_DIR/main.yaml" ]]; then
     ansible-galaxy collection install community.general
   fi
   
-  ansible-playbook main.yaml --ask-become-pass
+  ansible-playbook --diff --extra-vars "@$CONFIG_DIR/values.yaml" "$DOTFILES_DIR/main.yaml" "$@"
 fi
