@@ -37,14 +37,5 @@ echo "The sudoer configuration is finished"
 # Create path
 cd "$DOTFILES_DIR"
 
-if [[ -f "$DOTFILES_DIR/main.yaml" ]]; then
-
-  DIR="$HOME/.ansible/collections/ansible_collections/community/general/"
-  echo "$DIR"
-  if [ ! -d "$DIR" ]; then
-    echo "Installing config files in ${DIR}..."
-    ansible-galaxy collection install community.general
-  fi
-  
-  ansible-playbook --diff --extra-vars "@$CONFIG_DIR/values.yaml" "$DOTFILES_DIR/main.yaml" "$@"
-fi
+ansible-galaxy collection install community.general
+ansible-playbook --diff --extra-vars "@$CONFIG_DIR/values.yaml" "$DOTFILES_DIR/main.yaml" "$@"
