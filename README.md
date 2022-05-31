@@ -107,6 +107,13 @@ To update your environment run the `dotfiles` command in your shell:
 ```bash
 dotfiles
 ```
+This will handle the following tasks:
+
+- Verify Ansible is up-to-date
+- Generate SSH keys and add to `~/.ssh/authorized_keys`
+- Clone this repository locally to `~/.dotfiles`
+- Verify any `ansible-galaxy` plugins are updated
+- Run this playbook with the values in `~/.config/dotfiles/values.yaml`
 
 ## Known Issues
 
