@@ -45,6 +45,6 @@ if [[ -f "$DOTFILES_DIR/main.yaml" ]]; then
     echo "Installing config files in ${DIR}..."
     ansible-galaxy collection install community.general
   fi
-  
+  ls $CONFIG_DIR
   ansible-playbook --diff --extra-vars "@$CONFIG_DIR/values.yaml" "$DOTFILES_DIR/main.yaml" "$@"
 fi
