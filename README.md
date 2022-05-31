@@ -15,7 +15,6 @@ Fully automated development environment using ansible plays for bootstrapping `m
   - [Setup](#setup)
     - [values.yaml](#valuesyaml)
     - [Examples](#examples)
-      - [Minimal](#minimal)
   - [Usage](#usage)
     - [Install](#install)
     - [Update](#update)
