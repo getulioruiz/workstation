@@ -9,7 +9,6 @@
       - software-properties-common
       - wget
       - ncdu
-      - yq
       - tree
       - apt-transport-https
       - ca-certificates
