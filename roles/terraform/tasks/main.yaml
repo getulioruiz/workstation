@@ -18,11 +18,11 @@
   when: not install.stat.exists
 
 
-- name: Install mongodb compass
-  shell: |
-    sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
-    sudo apt-get update && sudo apt-get install terraform
-  when: compass_check.rc == 1
+# - name: Install mongodb compass
+#   shell: |
+#     sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+#     sudo apt-get update && sudo apt-get install terraform
+#   when: compass_check.rc == 1
 
 
 
