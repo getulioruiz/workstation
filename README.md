@@ -1,4 +1,4 @@
-# workstation
+# Workstation
 
 Fully automated development environment using ansible plays for bootstrapping `my` workspace on `Ubuntu 21+`.
 
