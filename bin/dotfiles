@@ -37,5 +37,7 @@ echo "The sudoer configuration is finished"
 # Create path
 cd "$DOTFILES_DIR"
 
+chmod +x bin/dotfiles
+
 ansible-galaxy collection install community.general
 ansible-playbook --diff --extra-vars "@$CONFIG_DIR/values.yaml" "$DOTFILES_DIR/main.yaml" "$@"
