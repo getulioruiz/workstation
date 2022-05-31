@@ -32,6 +32,7 @@ Provide fully automated `Ubuntu 21+` development environment that is easy to set
 [Ubuntu](https://ubuntu.com/about) is an ancient African word meaning ‘humanity to others’. It is often described as reminding us that ‘I am what I am because of who we all are’. We bring the spirit of Ubuntu to the world of computers and software. The Ubuntu distribution represents the best of what the world’s software community has shared with the world.
 
 ### Why Ansible?
+[Ansible](https://www.ansible.com/overview/it-automation) is an open source community project sponsored by Red Hat, it's the simplest way to automate IT. Ansible is the only automation language that can be used across entire IT teams from systems and network administrators to developers and managers.
 
 
 ## Requirements
