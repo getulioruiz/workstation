@@ -2,19 +2,19 @@
 - name: Existing install
   stat:
     path: "/usr/bin/az"
-  register: az
+  register: install
 
 - name: Install
   shell:
     cmd: curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
     warn: false
-  when: not az.stat.exists
+  when: not install.stat.exists
 
 - name: Adding azure-devops Extension
   shell:
     cmd: az extension add --name azure-devops
     warn: false
-  when: not az.stat.exists
+  when: not install.stat.exists
 
   
 

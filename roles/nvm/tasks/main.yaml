@@ -6,7 +6,6 @@
 
 - name: nvm
   shell: >
-    # TODO, deixar versao parametrizavel
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
   args:
     creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"

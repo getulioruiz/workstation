@@ -1,4 +1,14 @@
 ---
+- name: Existing nitrogen direcotry
+  stat:
+    path: "{{ ansible_user_dir }}/.config/nitrogen"
+  register: install
+
+- name: Create nitrogen directory
+  shell: > 
+    mkdir {{ ansible_user_dir }}/.config/nitrogen
+  when: not install.stat.exists
+
 - name: nitrogen.cfg
   ansible.builtin.template:
     dest: "{{ ansible_user_dir }}/.config/nitrogen/nitrogen.cfg"
@@ -9,6 +19,7 @@
     dest: "{{ ansible_user_dir }}/.config/nitrogen/bg-saved.cfg"
     src: "bg-saved.cfg.j2"
   register: background
+  
 
 # - name: Restore
 #   command: nitrogen --restore

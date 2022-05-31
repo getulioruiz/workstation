@@ -1,32 +1,32 @@
 default_roles:
-  - system
+  - azure-cli
   - bat
-  - pyenv
-  - zsh
+  - commitizen
+  - dbeaver-ce
+  - discord
+  - docker
   - firefox
+  - gcloud
+  # - git
+  - go
+  - google-chrome
+  - intellij-idea-community
+  - kitty
+  - kubectl
+  - mongosh
+  - nitrogen
+  - nnn
   - nvm
   - oh-my-zsh
-  - docker
-  - go
-  - visual-studio-code
-  - slack
-  - postman
-  - spotify
-  - tfswitch
-  #- terraform
-  - discord
-  - azure-cli
-  - commitizen
-  - mongosh
-  - gcloud
-  - kubectl
-  - google-chrome
-  - redis-desktop-manager
-  - storage-explorer
-  - pycharm-community
-  - intellij-idea-community
   - poetry
-  - kitty
-  - nnn
-  - nitrogen
-  - git
+  - postman
+  - pycharm-community
+  - pyenv
+  - redis-desktop-manager
+  - slack
+  - spotify
+  - storage-explorer
+  - tfswitch
+  - visual-studio-code
+  - zsh
+  - system

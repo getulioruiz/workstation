@@ -6,6 +6,6 @@
 
 - name: Install
   community.general.snap:
-    name: dbeaver-cs
+    name: dbeaver-ce
   become: true
   when: not install.stat.exists

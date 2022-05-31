@@ -32,6 +32,7 @@
     cmd: code --install-extension '{{ item }}' 
   loop: 
     - ms-python.python
+    - naumovs.color-highlight
     - hashicorp.terraform
     - gruntfuggly.todo-tree
     - redhat.vscode-yaml
