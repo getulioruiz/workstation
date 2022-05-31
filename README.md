@@ -108,3 +108,8 @@ To update your environment run the `dotfiles` command in your shell:
 dotfiles
 ```
 
+## Known Issues
+
+### Latest Ansible requires a specific version of resolvelib
+fix: ```sudo -H pip install -Iv 'resolvelib<0.6.0'``` - Issue found [here](https://github.com/ansible-collections/community.digitalocean/issues/132#issuecomment-934355414)
+
