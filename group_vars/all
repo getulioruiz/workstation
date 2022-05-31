@@ -7,7 +7,7 @@ default_roles:
   - docker
   - firefox
   - gcloud
-  # - git
+  - git
   - go
   - google-chrome
   - intellij-idea-community
