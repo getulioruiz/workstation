@@ -1,4 +1,5 @@
 default_roles:
+  - system
   - azure-cli
   - bat
   - commitizen
@@ -28,5 +29,4 @@ default_roles:
   - storage-explorer
   - tfswitch
   - visual-studio-code
-  - zsh
-  - system
+
