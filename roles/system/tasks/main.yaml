@@ -2,6 +2,7 @@
   ansible.builtin.package:
     name:
       - gdebi
+      - zsh
       - jq
       - gcc
       - perl
