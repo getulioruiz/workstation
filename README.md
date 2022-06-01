@@ -118,5 +118,5 @@ This will handle the following tasks:
 ## Known Issues
 
 ### Latest Ansible requires a specific version of resolvelib
-fix: ```sudo -H pip install -Iv 'resolvelib<0.6.0'``` - Issue found [here](https://github.com/ansible-collections/community.digitalocean/issues/132#issuecomment-934355414)
+If you have some issues with ansible try this fix: ```sudo -H pip install -Iv 'resolvelib<0.6.0'``` - Issue found [here](https://github.com/ansible-collections/community.digitalocean/issues/132#issuecomment-934355414)
 
