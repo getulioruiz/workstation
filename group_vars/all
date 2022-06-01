@@ -11,7 +11,7 @@ default_roles:
   - go
   - google-chrome
   - intellij-idea-community
-  - kitty
+  #- kitty
   - kubectl
   - mongosh
   - nitrogen
