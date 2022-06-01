@@ -1,0 +1,19 @@
+---
+- name: Fonts folder
+  ansible.builtin.file:
+    mode: "0755"
+    path: "{{ ansible_user_dir }}/.fonts"
+    state: directory
+
+- name: Fonts
+  copy:
+    dest: "{{ ansible_user_dir }}/.fonts"
+    src: "{{ font }}"
+  loop_control:
+    loop_var: font
+  with_fileglob:
+    - "MesloLGS*"
+
+- name: Cache
+  shell: >
+    fc-cache -f -v
