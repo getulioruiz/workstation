@@ -1,5 +1,6 @@
 default_roles:
   - system
+  - zsh
   - azure-cli
   - bat
   - commitizen
@@ -31,5 +32,5 @@ default_roles:
   - tfswitch
   - terminator
   - visual-studio-code
-  - zsh
+  
 
